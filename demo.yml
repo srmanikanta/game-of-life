@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install elinks
+    package:
+      update_cache: yes
+      name: elinks
+      state: present
+  - name: debug message
+    debug:
+      msg: Installing elinks on {{ inventory_hostname }}
+...
